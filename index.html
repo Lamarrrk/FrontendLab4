@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Салман Марк Адам, хобі, освіта, улюблене місто, улюблені книжки">
+    <meta name="description" content="Сторінка з інформацією про студента Салмана М.А.А., з групи ІМ-23">
+    <title>Салман М.А.А. ІМ-23</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2 title="ПІБ">Салман Марк Адам Ассаадович</h2>
+    <p>Місце народження: Ліван, м.Шместар, Дата народження: 16.02.2005</p>
+    <p>Освіта: ЗССО№20699, Пирятинський ліцей №4 м.Пирятин, НТУУ КПІ м.Київ</p>
+
+    <p>Хобі:</p>
+    <ul> 
+        <li>Футбол</li>
+        <li>Шахи</li>
+        <li>Спортзал</li>
+        <li>Комп'ютерні ігри</li>
+    </ul>
+    <p>Улюблені книжки:</p>
+    <ol>
+        <li>"Нестерпна легкість буття", <i>Мілан Кундера</i></li>
+        <li>"Відьмак: Вежа Ластівки", <i>Анджей Сапковський</i></li>
+        <li>"Алхімік", <i>Пауло Коельйо</i></li>
+    </ol>
+
+    <p> <b>Прага</b> - столиця та найбільше місто Чехії, адміністративний центр Середньочеського краю,
+       а також двох його районів Прага-Захід та Прага-схід.</p>
+    <p>У X-XII століттях Прага була столицею Чеського князівства,
+       У XII-XVIII століттях - столицею Чеського Королівства,
+       У 1806-1867 рр. - столицею Чеського королівства у складі Автрійської імперії,
+       У 1867-1918 рр. - провінційним містом Австро-Угорщини,
+       У 1918-1939 та 1945-1948 рр. - столицею Чехословацької Республіки,
+       У 1939-1945 рр. - німецького протекторату Богемії та Моравії,
+       У 1948-1990 рр. - Чехословацької Соціалістичної Республіки,
+       У 1990-1992 рр. - Чехословацької Федеративної Республіки,
+       А з 1993-го року - столицею Чеської Республіки.
+    </p>
+    <div>
+        <a href="https://prague.eu/en/discover/">
+            <img id = "prague-image" src = "https://cdn.praguecitytourism.city/2024/06/09161427/Vltava_10.jpg" width="1000" alt="Photo of Prague">
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+
+    <div id="image-container"></div>
+
+    <div>
+        <button onclick="addImage()">Додати</button>
+        <button onclick="increaseSize()">Збільшити</button>
+        <button onclick="decreaseSize()">Зменшити</button>
+        <button onclick="removeImage()">Видалити</button>
+    </div>
+    
+    <script>
+        function addImage() {
+        const img = document.createElement("img");
+        img.src = "https://cdn.praguecitytourism.city/2024/06/09161427/Vltava_10.jpg";
+        img.alt = "Test Image";
+        img.width = 1000;
+
+        const container = document.getElementById("image-container");
+        if (container) {
+            container.appendChild(img);
+            console.log("Зображення успішно додано!");
+        } else {
+            console.error("Контейнер для зображення не знайдено.");
+            }
+     }
+         function increaseSize() {
+        const images = document.querySelectorAll("#image-container img");
+        images.forEach(img => {
+        img.width += 40;
+       });
+     }
+       function decreaseSize() {
+       const images = document.querySelectorAll("#image-container img");
+       images.forEach(img => {
+       if (img.width > 40) img.width -= 40;
+       });
+     }
+       function removeImage() {
+       const container = document.getElementById("image-container");
+       if (container.lastChild) container.removeChild(container.lastChild);
+     }
+    </script>
+</body>
+</html>
